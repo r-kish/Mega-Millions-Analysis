@@ -4,10 +4,12 @@
 
 Mega Millions is a national lottery game that is played twice a week, giving players the chance to win potentially millions of dollars. The object of the game is to pull 5 numbers from a pool of 75 available numbers, and also pull one Megaball number from a pool of 15 numbers. It costs $1 to play just the 5 numbers, and $2 to play with the Megaball multiplier. The goal of this study is to analyze data publicly accessible through the [Mega Millions website](https://www.megamillions.com/Winning-Numbers/Previous-Drawings.aspx&ved=2ahUKEwiE96q3sNaFAxW738kDHdFQB7EQ0gIoAHoECCsQAQ&usg=AOvVaw1ONlc9nQLr9n5L-x7w_llT), and compare it with theoretical data calculated based on the conditions of the game. Additionally, some questions are answered regarding ticket revenue vs. payout, as well as lottery jackpot vs. ticket sales.
 
+The data selected includes 96 draws from anonymous participants of Mega Millions from 2010.
+
 ### Table of Contents:
 - Hypothesis
 - Probability and Statistics of Specific Draws
-- Linear Regression Analysis of...
+- Analysis of Payout and Sales Numbers
 
 ## Hypothesis
 Given the nature of the lottery, it was hypothesized that the larger the jackpot amount, the greater the ticket sales would be. Additionally, it was hypothesized that there would be a substantial loss in the lottery's net earning when the jackpot is won; however, the revenue should overall be greater than the prize money given away. Lastly, it is hypothesized that there is a certain amount of money where tickets will substantially increase in sales numbers.
@@ -21,7 +23,7 @@ The following chart has the list of all possible draws, and their theoretical pr
 
 ![TheoreticalProb](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/TheoreticalProb.png)
 
-Next are three draws (PW01, PW11, & PW21), and their probability distributions. Notice how probabailities decrease with each better draw. After these distributions are the calculated mean, standard deviation, and coefficient of variation, as well as the calculated probability using Mega Millions data for each draw.
+Next I focus on three draws (PW01, PW11, & PW21), and their probability distributions. Notice how probabailities decrease with each better draw. After these distributions are the calculated mean, standard deviation, and coefficient of variation, as well as the calculated probability using Mega Millions data for each draw.
 
 ### Draw 1: Probability of Winning Megaball only
 This graph shows the probability distribution of winning only the Megaball (PW01). The theoretical probability of PW01 is 0.047619.
@@ -41,19 +43,31 @@ This graph shows the proabability distribution of winning 2 numbers and the Mega
 ### Mean of the Draws
 ![mean](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/Mean.png)
 
-### Standard Deviation of the Draws
+### Standard deviation of the draws
 ![SD](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/SD.png)
 
-### Coefficient of Variation of the Draws
+### Coefficient of variation of the draws
 ![CV](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/CV.png)
 
-### Calculated Probabilities of the Draws 
-Using the data available from Mega Millions for the year of 2010, these were the calculated probabilities of the three draws focused on in this section of the study. Notice the difference between these probabilities and the theoretical probabilities from earlier. In all cases, the actual probability for each draw was higher than the theoretical probability (with PW01, and PW11 being much higher). The standard deviation was much greater for these two draws which could potentially contribute to the drastic difference between theoretical and calculated probabilities.
+### Calculated probabilities of the draws 
+Using the data available from Mega Millions for the year of 2010, these were the calculated probabilities of the three draws focused on in this section of the study. Notice the difference between these probabilities and the theoretical probabilities from earlier. In all cases, the actual probability for each draw was higher than the theoretical probability (with PW01, and PW11 being much higher). The standard deviation was much greater for these two draws which could potentially contribute to the drastic difference between theoretical and calculated probabilities Additionally, had we used a greater sample than 96 participants, the calculated probabilities may have been closer to the theoretical probabilities.
 
 ![CalcProbs](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/CalcProbs.png)
 
-## Linear Regression Analysis of ...
+## Linear Regression Analysis of Payout and Sales Numbers
+In this section, I will be using linear regression analysis to study the relationships between lottery payout/jackpot amounts and ticket sales numbers. Additionally I will be answering the following questions:
+- Is the Megaball Multiplier profitable, or just a gimmick?
+- What is the effect of the jackpot amount on total ticket sales?
 
-### Lottery Payout vs. Ticket Revenue
+### Profitability of the Megaball Multiplier (Lottery Payout vs. Ticket Revenue)
+Plotted is the distribution of Total Lottery Payout vs. the Total Ticket Revenue.
+- Green linear regression line is inclusive of the Megaball tickets + payouts
+- Red linear regression line is the hypothetically scenario where there is no Megaball ticket option + Megaball payout
+  
+![PayoutVRevenue](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/PayoutVsRevenue.png)
 
-### Linear Regression Analysis of Jackpot Amount vs. Tickets
+It is evident that the presence of the Megaball multiplier as an option that costs $2 rather than the base $1 game, is highly profitable as opposed to if the Mega Millions were to only offer $1 tickets without the Megaball multiplier. The lottery would be making a lot less on ticket revenue had they left out the Megaball multiplier.
+
+### The Effect of the Jackpot Amount on Ticket Sales (Jackpot Amount vs. Ticket Sales)
+
+![JackpotVTickets](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/JackpotVsTickets.png)
