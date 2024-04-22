@@ -56,11 +56,11 @@ Using the data available from Mega Millions for the year of 2010, these were the
 
 ## Linear Regression Analysis of Payout and Sales Numbers
 In this section, I will be using linear regression analysis to study the relationships between lottery payout/jackpot amounts and ticket sales numbers. Additionally I will be answering the following questions:
-- Is the Megaball Multiplier profitable, or just a gimmick?
+- Is the Megaball Jackpot Multiplier profitable, or just a gimmick?
 - What is the effect of the jackpot amount on total ticket sales?
 
 ### Profitability of the Megaball Multiplier (Lottery Payout vs. Ticket Revenue)
-Plotted is the distribution of Total Lottery Payout vs. the Total Ticket Revenue.
+Below is the distribution of the Total Lottery Payout vs. the Total Ticket Revenue. To measure the profitability of the Megaball multiplier, the payout vs. ticket revenue will be analyzed using both regular payout and Megaball payout data, and again using only regular payout data (excludes Megaball payout data).
 - Green linear regression line is inclusive of the Megaball tickets + payouts
 - Red linear regression line is the hypothetically scenario where there is no Megaball ticket option + Megaball payout
   
@@ -69,5 +69,12 @@ Plotted is the distribution of Total Lottery Payout vs. the Total Ticket Revenue
 It is evident that the presence of the Megaball multiplier as an option that costs $2 rather than the base $1 game, is highly profitable as opposed to if the Mega Millions were to only offer $1 tickets without the Megaball multiplier. The lottery would be making a lot less on ticket revenue had they left out the Megaball multiplier.
 
 ### The Effect of the Jackpot Amount on Ticket Sales (Jackpot Amount vs. Ticket Sales)
+Below is the distribution of the various Jackpot Amounts vs. corresponding Ticket Sales. The intersection of both linear regression lines is at the point where the jackpot = $150 million. This amount will be the point used to analyze how ticket sales change based on jackpot amount.
+- Green linear regression line is when the jackpot was >$150 million
+- Red linear regression line is when the jackpost was <$150 million
 
 ![JackpotVTickets](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/JackpotVsTickets.png)
+
+The jackpot amount has a clear effect on the amount of ticket sales made during one round of the Mega Millions lottery. In fact, as the jackpot increases, the rate of ticket sales increases (see green regression line after $150 million jackpot).
+
+This analysis can be further applied to multiple years of data in order to support a predictive model. Such a predictive model could use upcoming jackpot amounts to predict the amount of ticket sales. The more data sampled, the more accurate the predictive model would become.
