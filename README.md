@@ -9,7 +9,7 @@ The data selected includes 96 draws from anonymous participants of Mega Millions
 ### Table of Contents:
 - Hypothesis
 - Probability and Statistics of Specific Draws
-- Analysis of Payout and Sales Numbers
+- Linear Regression Analysis of Payout and Sales Numbers
 
 ## Hypothesis
 Given the nature of the lottery, it was hypothesized that the larger the jackpot amount, the greater the ticket sales would be. Additionally, it was hypothesized that there would be a substantial loss in the lottery's net earning when the jackpot is won; however, the revenue should overall be greater than the prize money given away. Lastly, it is hypothesized that there is a certain amount of money where tickets will substantially increase in sales numbers.
