@@ -1,6 +1,6 @@
 # Mega Millions Data Analysis Project
 
-![logo](https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/Mega_Millions_Lottery_logo.svg.png = 500x)
+<img width = 500, src = "https://github.com/r-kish/Mega-Millions-Analysis/blob/main/images/Mega_Millions_Lottery_logo.svg.png">
 
 Mega Millions is a national lottery game that is played twice a week, giving players the chance to win potentially millions of dollars. The object of the game is to pull 5 numbers from a pool of 75 available numbers, and also pull one Megaball number from a pool of 15 numbers. It costs $1 to play just the 5 numbers, and $2 to play with the Megaball multiplier. The goal of this study is to analyze data publicly accessible through the Mega Millions website, and compare it with theoretical data calculated based on the conditions of the game. Additionally, some questions are answered regarding ticket revenue vs. payout, as well as lottery jackpot vs. ticket sales.
 
