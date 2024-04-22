@@ -1,8 +1,9 @@
-### Mega Millions! Data Analysis
-### Richard Kish
-### Data from 2010
+### Mega Millions Data Analysis
+### By: Richard Kish
+### Data from 2010 - Derived from the Mega Millions Website
 
-setwd("...") # insert your pathway here
+# Load data into R (use your own data pathway)
+setwd("/Users/kishr/Desktop/Portfolio/R Projects/Lottery Project")
 probdata = read.csv("probabilities.csv",header = TRUE)
 lotinfo = read.csv("lottery.CSV", header = TRUE)
 prizemon = read.csv("prizes.CSV", header = T)
@@ -86,6 +87,7 @@ megapayout= mega[,]* mlotinfo[,2]
 
 #Combining all payouts into one data set
 payout= cbind(a,regpayout,megapayout)
+payout1 = cbind(a, regpayout) # This is for hypothetical no-Megaball scenario
 
 #Adding all components of a drawings payouts
 totalpayout = vector("numeric", numRows)
@@ -97,6 +99,17 @@ for (i in 1:numRows){
   totalpayout[i] = totalRow
 }
 
+#Adding all components of a regular drawings payouts
+#This is for hypothetical no-Megaball scenario
+totalpayout1 = vector("numeric", numRows)
+for (i in 1:numRows){
+  totalRow = 0
+  for (j in 1:ncol(payout1)){
+    totalRow = totalRow + payout1[i,j]
+  }
+  totalpayout1[i] = totalRow
+}
+
 #Calculating the actual number of jackpot winners and the theoretical value
 Jackpotwinner = sum(lotinfo$W51)
 print(Jackpotwinner)
@@ -104,11 +117,19 @@ averagenumtickets=mean(Totalnumtickets)
 timebetweenjackpots = 1/(averagenumtickets * probdata$P51) #Returns ~infinity
 
 #Getting the ratio of total payout to ticket sales and plotting the ratio
+#Including the payout/ticket numbers for a no-Megaball scenario
 Ratio = (totalpayout/ticketrevenue)*100
 totalpayout = totalpayout/1000000
 totalpayout = totalpayout/1000000
+totalpayout1 = totalpayout1/1000000
+totalpayout1 = totalpayout1/100
 ticketrevenue = ticketrevenue/1000000
+ticketrevenue1 = regticketscost/1000000
+lm(ticketrevenue ~ totalpayout) # With megaball multiplier 
+lm(ticketrevenue1 ~ totalpayout1) # Without megaball multiplier
 plot(totalpayout,ticketrevenue, font = 5, ylab = "Ticket Revenue [in Millions of $]",xlab = "Total Payout [in Millions of $]", main = "Total Payout vs. Ticket Revenue")
+abline(2.973, 0.31, col = "green") #Inclusive of Megaball
+abline(3.4421, 0.09544, col = "red") #Does not include Megaball
 
 #Setup for linear regression of jackpot winnings
 jackpot = lotinfo$Estimated.Jackpot/1000000
